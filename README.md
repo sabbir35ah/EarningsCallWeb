@@ -15,11 +15,17 @@ A modern SaaS landing page for **EarningsCall**, a platform providing real-time 
 > Replace the paths below with your actual screenshot images
 
 ### Hero Section
-![Hero Section](./public/images/heross.png)
+![Hero Section](./public/images/hero.png)
 
-| Pricing Page | Features Section | Calendar Section |
-|---|---|---|
-| ![Pricing](./public/screenshots/pricing.png) | ![Features](./public/screenshots/features.png) | ![Calendar](./public/screenshots/calendar.png) |
+### Features Section
+![Features Section](./public/images/feature.png)
+
+### Pricing Page
+![Pricing Page](./public/images/pricing.png)
+
+| Calendar Section |
+|---|
+| ![Calendar](./public/screenshots/calendar.png) |
 
 ---
 
