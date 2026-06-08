@@ -23,9 +23,8 @@ A modern SaaS landing page for **EarningsCall**, a platform providing real-time 
 ### Pricing Page
 ![Pricing Page](./public/images/pricing.png)
 
-| Calendar Section |
-|---|
-| ![Calendar](./public/screenshots/calendar.png) |
+### Calendar Section
+![Calendar Section](./public/images/calender.png)
 
 ---
 
