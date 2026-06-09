@@ -3,19 +3,22 @@
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
 import { Container } from "@/components/layout/container";
-import { fadeInUp, staggerContainer } from "@/components/shared/animated-section";
+import {
+  fadeInUp,
+  staggerContainer,
+} from "@/components/shared/animated-section";
 
 // All JSON text rendered in a single accent green per Figma (#4dec8c)
 const jsonLines = [
-  { num: 1,  text: "{" },
-  { num: 2,  text: '  "company_name": "Apple Inc.",' },
-  { num: 3,  text: '  "events": [' },
-  { num: 4,  text: "    {" },
-  { num: 5,  text: '      "year": 2024,' },
-  { num: 6,  text: '      "quarter": 2,' },
-  { num: 7,  text: '      "conference_date": "2024-05-02T17:00:00.000-04:00"' },
-  { num: 8,  text: "    }," },
-  { num: 9,  text: '    { "year": 2024,' },
+  { num: 1, text: "{" },
+  { num: 2, text: '  "company_name": "Apple Inc.",' },
+  { num: 3, text: '  "events": [' },
+  { num: 4, text: "    {" },
+  { num: 5, text: '      "year": 2024,' },
+  { num: 6, text: '      "quarter": 2,' },
+  { num: 7, text: '      "conference_date": "2024-05-02T17:00:00.000-04:00"' },
+  { num: 8, text: "    }," },
+  { num: 9, text: '    { "year": 2024,' },
   { num: 10, text: '      "quarter": 1,' },
   { num: 11, text: '      "conference_date": "2024-02-01T17:00:00.000-05:00"' },
 ];
@@ -32,8 +35,15 @@ export function HeroSection() {
         `,
       }}
     >
-
-      <Container className="relative z-10 flex flex-col items-center pt-20 pb-0 text-center sm:pt-28" style={{ paddingBottom: 0, display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <Container
+        className="relative z-10 flex flex-col items-center pt-20 pb-0 text-center sm:pt-28"
+        style={{
+          paddingBottom: 0,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -73,8 +83,9 @@ export function HeroSection() {
               marginTop: "24px",
             }}
           >
-            Historical and current earnings transcripts, audio files, slide decks, and
-            event data from 9,000+ public companies — clean JSON, one API, ready to ship.
+            Historical and current earnings transcripts, audio files, slide
+            decks, and event data from 9,000+ public companies — clean JSON, one
+            API, ready to ship.
           </motion.p>
 
           {/* Search bar */}
@@ -102,12 +113,21 @@ export function HeroSection() {
           <motion.div
             variants={fadeInUp}
             className="relative mt-12"
-            style={{ width: "min(909px, 100%)", height: "clamp(220px, 40vw, 372px)", marginBottom: 0 }}
+            style={{
+              width: "min(909px, 100%)",
+              height: "clamp(220px, 40vw, 372px)",
+              marginBottom: 0,
+            }}
           >
             {/* White backing card — visible left, top, right */}
             <div
               className="absolute inset-0 rounded-t-xl"
-              style={{ backgroundColor: "#ffffff", width: "100%", height: "100%", zIndex: 0 }}
+              style={{
+                backgroundColor: "#ffffff",
+                width: "100%",
+                height: "100%",
+                zIndex: 0,
+              }}
             >
               {/* Header bar sits in the white top strip, aligned to dark card width */}
               <div
@@ -124,10 +144,20 @@ export function HeroSection() {
                     backgroundColor: "#ffffff",
                   }}
                 >
-                  <span className="font-mono text-xs" style={{ color: "#000000" }}>GET /events</span>
+                  <span
+                    className="font-mono text-xs"
+                    style={{ color: "#000000" }}
+                  >
+                    GET /events
+                  </span>
                   <span className="flex items-center gap-1.5 font-mono text-xs">
-                    <span className="h-2 w-2 rounded-full" style={{ backgroundColor: "#4dec8c" }} />
-                    <span className="font-medium" style={{ color: "#000000" }}>200</span>
+                    <span
+                      className="h-2 w-2 rounded-full"
+                      style={{ backgroundColor: "#4dec8c" }}
+                    />
+                    <span className="font-medium" style={{ color: "#000000" }}>
+                      200
+                    </span>
                     <span style={{ color: "#000000" }}>ok</span>
                   </span>
                 </div>
@@ -146,25 +176,31 @@ export function HeroSection() {
                 zIndex: 1,
               }}
             >
-            {/* Code area — full height of dark card */}
-            <div
-              className="overflow-x-auto px-5 py-5 text-left font-mono text-xs leading-[1.8]"
-              style={{ backgroundColor: "#0a2013", height: "100%", overflowY: "hidden" }}
-            >
-              {jsonLines.map((line) => (
-                <div key={line.num} className="flex">
-                  <span
-                    className="mr-5 w-5 shrink-0 select-none text-right"
-                    style={{ color: "#4dec8c" }}
-                  >
-                    {line.num}
-                  </span>
-                  <span style={{ color: "#4dec8c" }}>{line.text}</span>
-                </div>
-              ))}
+              {/* Code area — full height of dark card */}
+              <div
+                className="overflow-x-auto px-5 py-5 text-left font-mono text-xs leading-[1.8]"
+                style={{
+                  backgroundColor: "#0a2013",
+                  height: "100%",
+                  overflowY: "hidden",
+                }}
+              >
+                {jsonLines.map((line) => (
+                  <div key={line.num} className="flex">
+                    <span
+                      className="mr-5 w-5 shrink-0 select-none text-right"
+                      style={{ color: "#4dec8c" }}
+                    >
+                      {line.num}
+                    </span>
+                    <span style={{ color: "#4dec8c" }}>{line.text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            </div>{/* end dark API card */}
-          </motion.div>{/* end card stack */}
+            {/* end dark API card */}
+          </motion.div>
+          {/* end card stack */}
         </motion.div>
       </Container>
     </section>

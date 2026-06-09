@@ -16,7 +16,10 @@ export function FeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
-          style={{ marginBottom: "clamp(40px, 8vw, 84px)", textAlign: "center" }}
+          style={{
+            marginBottom: "clamp(40px, 8vw, 84px)",
+            textAlign: "center",
+          }}
         >
           <span
             style={{
@@ -47,7 +50,8 @@ export function FeaturesSection() {
               margin: "0 auto",
             }}
           >
-            Transcripts, audio, slide decks, and earnings data from 9,000+ companies. One API, ready to ship.
+            Transcripts, audio, slide decks, and earnings data from 9,000+
+            companies. One API, ready to ship.
           </p>
         </motion.div>
 

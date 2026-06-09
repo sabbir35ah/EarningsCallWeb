@@ -1,7 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { slideInLeft, slideInRight } from "@/components/shared/animated-section";
+import {
+  slideInLeft,
+  slideInRight,
+} from "@/components/shared/animated-section";
 
 // ─── Calendar data ────────────────────────────────────────────────────────────
 const DAY_HEADERS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -9,14 +12,50 @@ const BADGE_COUNTS = [362, 112, 362, 112, 112, 112, 112];
 
 const WEEKS = [
   [
-    { day: 28, isPrev: true }, { day: 29, isPrev: true },
-    { day: 30, isPrev: true }, { day: 31, isPrev: true },
-    { day: 1 }, { day: 2 }, { day: 3 },
+    { day: 28, isPrev: true },
+    { day: 29, isPrev: true },
+    { day: 30, isPrev: true },
+    { day: 31, isPrev: true },
+    { day: 1 },
+    { day: 2 },
+    { day: 3 },
   ],
-  [{ day: 4 }, { day: 5 }, { day: 6 }, { day: 7 }, { day: 8 }, { day: 9 }, { day: 10 }],
-  [{ day: 11 }, { day: 12 }, { day: 13 }, { day: 14 }, { day: 15 }, { day: 16 }, { day: 17 }],
-  [{ day: 18 }, { day: 19 }, { day: 20 }, { day: 21 }, { day: 22 }, { day: 23 }, { day: 24 }],
-  [{ day: 25 }, { day: 26 }, { day: 27 }, { day: 28 }, { day: 29 }, { day: 30 }, { day: 31 }],
+  [
+    { day: 4 },
+    { day: 5 },
+    { day: 6 },
+    { day: 7 },
+    { day: 8 },
+    { day: 9 },
+    { day: 10 },
+  ],
+  [
+    { day: 11 },
+    { day: 12 },
+    { day: 13 },
+    { day: 14 },
+    { day: 15 },
+    { day: 16 },
+    { day: 17 },
+  ],
+  [
+    { day: 18 },
+    { day: 19 },
+    { day: 20 },
+    { day: 21 },
+    { day: 22 },
+    { day: 23 },
+    { day: 24 },
+  ],
+  [
+    { day: 25 },
+    { day: 26 },
+    { day: 27 },
+    { day: 28 },
+    { day: 29 },
+    { day: 30 },
+    { day: 31 },
+  ],
 ];
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
@@ -25,7 +64,10 @@ function EventBadge({ count, isSaturday }) {
   return (
     <span
       className="mt-1 inline-flex items-center justify-center rounded-full px-1.5 py-0.5 text-[9px] font-semibold leading-none sm:px-2 sm:text-[10px]"
-      style={{ backgroundColor: isSaturday ? "#4dec8c" : "#40ff8f", color: "#012d12" }}
+      style={{
+        backgroundColor: isSaturday ? "#4dec8c" : "#40ff8f",
+        color: "#012d12",
+      }}
     >
       {count}
     </span>
@@ -38,7 +80,11 @@ function DayCell({ cell, colIndex }) {
     <div className="flex flex-col items-center py-2 sm:py-3 lg:py-1">
       <span
         className="text-[10px] font-medium leading-none sm:text-[11px]"
-        style={{ color: cell.isPrev ? "rgba(255,255,255,0.3)" : "rgba(255,255,255,0.9)" }}
+        style={{
+          color: cell.isPrev
+            ? "rgba(255,255,255,0.3)"
+            : "rgba(255,255,255,0.9)",
+        }}
       >
         {cell.day}
       </span>
@@ -54,9 +100,14 @@ function AugustCalendar() {
     <div className="w-full overflow-hidden rounded-xl">
       {/* Header */}
       <div className="flex items-center justify-between px-3 py-3 sm:px-4">
-        <span className="text-sm font-semibold text-white sm:text-base">August</span>
+        <span className="text-sm font-semibold text-white sm:text-base">
+          August
+        </span>
         <div className="flex items-center gap-1.5">
-          <span className="h-2 w-2 rounded-full" style={{ backgroundColor: "#4dec8c" }} />
+          <span
+            className="h-2 w-2 rounded-full"
+            style={{ backgroundColor: "#4dec8c" }}
+          />
           <span className="text-xs text-white/70">Calls</span>
         </div>
       </div>
@@ -76,10 +127,7 @@ function AugustCalendar() {
       {/* Weeks */}
       <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8">
         {WEEKS.map((week, wi) => (
-          <div
-            key={wi}
-            className="grid grid-cols-7"
-          >
+          <div key={wi} className="grid grid-cols-7">
             {week.map((cell, ci) => (
               <DayCell key={`${wi}-${ci}`} cell={cell} colIndex={ci} />
             ))}
@@ -92,9 +140,9 @@ function AugustCalendar() {
 
 // ─── Stats & Bullets ─────────────────────────────────────────────────────────
 const STATS = [
-  { value: "55k+",  label: "Total Call" },
-  { value: "9000+", label: "Companies"  },
-  { value: "Live",  label: "Updates"    },
+  { value: "55k+", label: "Total Call" },
+  { value: "9000+", label: "Companies" },
+  { value: "Live", label: "Updates" },
 ];
 
 const BULLETS = [
@@ -124,7 +172,6 @@ export function CalendarSection() {
           }}
         >
           <div className="grid grid-cols-1 lg:grid-cols-2">
-
             {/* ── LEFT COLUMN ── */}
             <motion.div
               variants={slideInLeft}
@@ -158,7 +205,10 @@ export function CalendarSection() {
                       style={{ backgroundColor: "#4dec8c" }}
                       aria-hidden="true"
                     />
-                    <span className="font-light leading-relaxed text-white/85" style={{ fontSize: "clamp(12px, 1.5vw, 14px)" }}>
+                    <span
+                      className="font-light leading-relaxed text-white/85"
+                      style={{ fontSize: "clamp(12px, 1.5vw, 14px)" }}
+                    >
                       {text}
                     </span>
                   </li>
@@ -171,7 +221,8 @@ export function CalendarSection() {
                     <span
                       style={{
                         color: "#FFF",
-                        fontFamily: "var(--font-stack-sans-headline), sans-serif",
+                        fontFamily:
+                          "var(--font-stack-sans-headline), sans-serif",
                         fontSize: "clamp(22px, 3vw, 32px)",
                         fontStyle: "normal",
                         fontWeight: 600,
@@ -201,13 +252,38 @@ export function CalendarSection() {
                 }}
               >
                 Go to Calendar
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" style={{ width: "clamp(16px, 2vw, 22px)", height: "clamp(16px, 2vw, 22px)" }}>
-                  <rect width="22" height="22" rx="2" fill="#1DBF73"/>
-                  <path d="M18.5296 10.5295V11.4706H9.58972V10.5295H18.5296Z" fill="#013214"/>
-                  <path d="M18.8623 10.6674C19.0461 10.8511 19.0461 11.149 18.8623 11.3327L14.1571 16.0379L13.4918 15.3726L17.8643 11L13.4918 6.6275L14.1571 5.96216L18.8623 10.6674Z" fill="#013214"/>
-                  <path d="M4.88446 10.5295V11.4706H3.94342V10.5295H4.88446Z" fill="#013214"/>
-                  <path d="M6.76657 10.5295V11.4706H5.82553V10.5295H6.76657Z" fill="#013214"/>
-                  <path d="M8.64871 10.5295V11.4706H7.70767V10.5295H8.64871Z" fill="#013214"/>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 22 22"
+                  fill="none"
+                  style={{
+                    width: "clamp(16px, 2vw, 22px)",
+                    height: "clamp(16px, 2vw, 22px)",
+                  }}
+                >
+                  <rect width="22" height="22" rx="2" fill="#1DBF73" />
+                  <path
+                    d="M18.5296 10.5295V11.4706H9.58972V10.5295H18.5296Z"
+                    fill="#013214"
+                  />
+                  <path
+                    d="M18.8623 10.6674C19.0461 10.8511 19.0461 11.149 18.8623 11.3327L14.1571 16.0379L13.4918 15.3726L17.8643 11L13.4918 6.6275L14.1571 5.96216L18.8623 10.6674Z"
+                    fill="#013214"
+                  />
+                  <path
+                    d="M4.88446 10.5295V11.4706H3.94342V10.5295H4.88446Z"
+                    fill="#013214"
+                  />
+                  <path
+                    d="M6.76657 10.5295V11.4706H5.82553V10.5295H6.76657Z"
+                    fill="#013214"
+                  />
+                  <path
+                    d="M8.64871 10.5295V11.4706H7.70767V10.5295H8.64871Z"
+                    fill="#013214"
+                  />
                 </svg>
               </button>
             </motion.div>
@@ -225,7 +301,6 @@ export function CalendarSection() {
                 <AugustCalendar />
               </div>
             </motion.div>
-
           </div>
         </div>
       </div>

@@ -12,7 +12,10 @@ function CompanySlide({ company }) {
   return (
     <div
       className="company-details flex shrink-0 flex-col items-center gap-1.5"
-      style={{ marginRight: "clamp(12px, 2vw, 26px)", width: "clamp(52px, 8vw, 80px)" }}
+      style={{
+        marginRight: "clamp(12px, 2vw, 26px)",
+        width: "clamp(52px, 8vw, 80px)",
+      }}
     >
       <div
         className="logo-block flex items-center justify-center"
@@ -33,11 +36,20 @@ function CompanySlide({ company }) {
           loading="lazy"
           decoding="async"
           draggable={false}
-          style={{ maxWidth: "clamp(36px, 6vw, 60px)", maxHeight: "clamp(36px, 6vw, 60px)", objectFit: "contain" }}
-          onError={(e) => { e.currentTarget.style.display = "none"; }}
+          style={{
+            maxWidth: "clamp(36px, 6vw, 60px)",
+            maxHeight: "clamp(36px, 6vw, 60px)",
+            objectFit: "contain",
+          }}
+          onError={(e) => {
+            e.currentTarget.style.display = "none";
+          }}
         />
       </div>
-      <p className="text-name text-center font-medium" style={{ color: "#374151", fontSize: "clamp(10px, 1.5vw, 14px)" }}>
+      <p
+        className="text-name text-center font-medium"
+        style={{ color: "#374151", fontSize: "clamp(10px, 1.5vw, 14px)" }}
+      >
         {company.name}
       </p>
     </div>
@@ -46,10 +58,10 @@ function CompanySlide({ company }) {
 
 export function LogoCloudSection() {
   const trackRef = useRef(null);
-  const animRef  = useRef(null);
+  const animRef = useRef(null);
   const dragging = useRef(false);
-  const prevX    = useRef(0);
-  const SPEED    = 0.6; // px per frame — always running
+  const prevX = useRef(0);
+  const SPEED = 0.6; // px per frame — always running
 
   useEffect(() => {
     const track = trackRef.current;
@@ -63,7 +75,7 @@ export function LogoCloudSection() {
       track.scrollLeft += SPEED;
       const third = track.scrollWidth / 3;
       if (track.scrollLeft >= third * 2) track.scrollLeft -= third;
-      if (track.scrollLeft <= 0)         track.scrollLeft += third;
+      if (track.scrollLeft <= 0) track.scrollLeft += third;
       animRef.current = requestAnimationFrame(tick);
     };
 
@@ -73,7 +85,7 @@ export function LogoCloudSection() {
 
   const startDrag = (x) => {
     dragging.current = true;
-    prevX.current    = x;
+    prevX.current = x;
     trackRef.current.style.cursor = "grabbing";
   };
 
@@ -118,7 +130,9 @@ export function LogoCloudSection() {
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24"
-          style={{ background: "linear-gradient(to right, white, transparent)" }}
+          style={{
+            background: "linear-gradient(to right, white, transparent)",
+          }}
         />
         <div
           aria-hidden="true"
@@ -130,7 +144,11 @@ export function LogoCloudSection() {
         <div
           ref={trackRef}
           className="flex items-start select-none overflow-x-scroll"
-          style={{ cursor: "grab", scrollbarWidth: "none", msOverflowStyle: "none" }}
+          style={{
+            cursor: "grab",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
           onMouseDown={(e) => startDrag(e.pageX)}
           onMouseMove={(e) => moveDrag(e.pageX)}
           onMouseUp={endDrag}

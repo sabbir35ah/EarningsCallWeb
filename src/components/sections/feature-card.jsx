@@ -24,9 +24,7 @@ export function FeatureCard({ icon, title, description, index }) {
       }}
     >
       {/* Icon — pass any SVG/JSX as the icon prop */}
-      <div className="h-8 w-8">
-        {icon ?? null}
-      </div>
+      <div className="h-8 w-8">{icon ?? null}</div>
 
       {/* Text — 56px below icon */}
       <div style={{ marginTop: "clamp(24px, 4vw, 56px)" }}>
@@ -38,7 +36,11 @@ export function FeatureCard({ icon, title, description, index }) {
         </h3>
         <p
           className="font-light leading-relaxed"
-          style={{ color: "#013214", opacity: 0.75, fontSize: "clamp(12px, 1.5vw, 0.8125rem)" }}
+          style={{
+            color: "#013214",
+            opacity: 0.75,
+            fontSize: "clamp(12px, 1.5vw, 0.8125rem)",
+          }}
         >
           {description}
         </p>
