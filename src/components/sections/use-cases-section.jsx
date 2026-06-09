@@ -1,8 +1,8 @@
 "use client";
 
+import { useCaseStats, useCaseTags } from "@/data/benefits";
 import { motion } from "framer-motion";
-import { Container } from "@/components/layout/container";
-import { useCaseTags, useCaseStats } from "@/data/benefits";
+import { Container } from "../layout/container";
 
 export function UseCasesSection() {
   return (
@@ -25,21 +25,22 @@ export function UseCasesSection() {
           >
             How people use EarningsCall
           </h2>
-          <p style={{
-            color: "#012D12",
-            textAlign: "center",
-            fontFamily: "var(--font-stack-sans-headline), sans-serif",
-            fontSize: "clamp(12px, 2vw, 16px)",
-            fontStyle: "normal",
-            fontWeight: 300,
-            lineHeight: "24px",
-          }}>
+          <p
+            style={{
+              color: "#012D12",
+              textAlign: "center",
+              fontFamily: "var(--font-stack-sans-headline), sans-serif",
+              fontSize: "clamp(12px, 2vw, 16px)",
+              fontStyle: "normal",
+              fontWeight: 300,
+              lineHeight: "24px",
+            }}
+          >
             Built for developers, serving investors every day.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-[65%_35%]">
-
           {/* LEFT — case study card */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -47,7 +48,12 @@ export function UseCasesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="flex flex-col justify-between p-8"
-            style={{ borderRadius: "12px", border: "1px solid #DEDEDE", background: "#FDFDFD", minHeight: "476px" }}
+            style={{
+              borderRadius: "12px",
+              border: "1px solid #DEDEDE",
+              background: "#FDFDFD",
+              minHeight: "476px",
+            }}
           >
             <div>
               <h3
@@ -64,15 +70,21 @@ export function UseCasesSection() {
               >
                 From manual research to a reliable internal chatbot
               </h3>
-              <p className="mb-8" style={{
-                color: "#012D12",
-                fontFamily: "var(--font-stack-sans-headline), sans-serif",
-                fontSize: "clamp(12px, 2vw, 16px)",
-                fontStyle: "normal",
-                fontWeight: 300,
-                lineHeight: "24px",
-              }}>
-                EarningsCall.biz proved to be a reliable service for our internal chatbot. Their quick response to our requests for adding new companies and helpful support in getting us started were appreciated.
+              <p
+                className="mb-8"
+                style={{
+                  color: "#012D12",
+                  fontFamily: "var(--font-stack-sans-headline), sans-serif",
+                  fontSize: "clamp(12px, 2vw, 16px)",
+                  fontStyle: "normal",
+                  fontWeight: 300,
+                  lineHeight: "24px",
+                }}
+              >
+                EarningsCall.biz proved to be a reliable service for our
+                internal chatbot. Their quick response to our requests for
+                adding new companies and helpful support in getting us started
+                were appreciated.
               </p>
             </div>
 
@@ -81,7 +93,17 @@ export function UseCasesSection() {
               <p className="text-sm font-semibold" style={{ color: "#012d12" }}>
                 Itai Friendinger
               </p>
-              <p style={{ color: "#012D12", fontFamily: "var(--font-stack-sans-headline), sans-serif", fontSize: "14px", fontStyle: "normal", fontWeight: 300, lineHeight: "20px", letterSpacing: "0.2px" }}>
+              <p
+                style={{
+                  color: "#012D12",
+                  fontFamily: "var(--font-stack-sans-headline), sans-serif",
+                  fontSize: "14px",
+                  fontStyle: "normal",
+                  fontWeight: 300,
+                  lineHeight: "20px",
+                  letterSpacing: "0.2px",
+                }}
+              >
                 Principal Software Engineer · Forter
               </p>
             </div>
@@ -138,15 +160,17 @@ export function UseCasesSection() {
             <div className="relative flex flex-col justify-center gap-0 px-10 py-10 h-full">
               {useCaseStats.map((stat, i) => (
                 <div key={i} className="py-7 first:pt-0 last:pb-0">
-                  <p style={{
-                    color: "#FFF",
-                    fontFamily: "var(--font-stack-sans-headline), sans-serif",
-                    fontSize: "clamp(24px, 4vw, 40px)",
-                    fontStyle: "normal",
-                    fontWeight: 600,
-                    lineHeight: "normal",
-                    letterSpacing: "0.2px",
-                  }}>
+                  <p
+                    style={{
+                      color: "#FFF",
+                      fontFamily: "var(--font-stack-sans-headline), sans-serif",
+                      fontSize: "clamp(24px, 4vw, 40px)",
+                      fontStyle: "normal",
+                      fontWeight: 600,
+                      lineHeight: "normal",
+                      letterSpacing: "0.2px",
+                    }}
+                  >
                     {stat.value}
                   </p>
                   <p className="mt-2 text-sm font-light text-white/70">

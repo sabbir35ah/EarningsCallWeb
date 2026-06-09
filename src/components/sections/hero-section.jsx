@@ -1,12 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Search } from "lucide-react";
-import { Container } from "@/components/layout/container";
 import {
   fadeInUp,
   staggerContainer,
 } from "@/components/shared/animated-section";
+import { motion } from "framer-motion";
+import { Search } from "lucide-react";
+import { Container } from "../layout/container";
 
 // All JSON text rendered in a single accent green per Figma (#4dec8c)
 const jsonLines = [

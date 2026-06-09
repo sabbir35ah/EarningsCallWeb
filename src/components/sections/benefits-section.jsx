@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Container } from "@/components/layout/container";
 import { benefits } from "@/data/benefits";
+import { Container } from "../layout/container";
 
 export function BenefitsSection() {
   return (

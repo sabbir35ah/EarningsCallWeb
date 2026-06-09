@@ -1,6 +1,6 @@
-import { Container } from "@/components/layout/container";
-import { TestimonialCard } from "./testimonial-card";
 import { testimonials } from "@/data/content";
+import { Container } from "../layout/container";
+import { TestimonialCard } from "./testimonial-card";
 
 export function TestimonialsSection() {
   return (

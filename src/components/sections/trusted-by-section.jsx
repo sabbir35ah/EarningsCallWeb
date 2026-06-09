@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import { Container } from "@/components/layout/container";
+import { useEffect, useRef } from "react";
+import { Container } from "../layout/container";
 
 const clients = [
   { id: "1", name: "MindCrop" },
@@ -97,7 +97,7 @@ export function TrustedBySection() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/icons/favicons 1.svg"
+                src="/icons/favicon-icon.svg"
                 alt=""
                 aria-hidden="true"
                 style={{

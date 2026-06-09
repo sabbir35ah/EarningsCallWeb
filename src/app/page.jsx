@@ -7,19 +7,22 @@ import { UseCasesSection } from "@/components/sections/use-cases-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { TrustedBySection } from "@/components/sections/trusted-by-section";
 import { CtaSection } from "@/components/sections/cta-section";
+import LayoutWrapper from "@/components/shared/layout-wrapper";
 
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
-      <LogoCloudSection />
-      <FeaturesSection />
-      <CalendarSection />
-      <BenefitsSection />
-      <UseCasesSection />
-      <TestimonialsSection />
-      <TrustedBySection />
-      <CtaSection />
+      <LayoutWrapper>
+        <HeroSection />
+        <LogoCloudSection />
+        <FeaturesSection />
+        <CalendarSection />
+        <BenefitsSection />
+        <UseCasesSection />
+        <TestimonialsSection />
+        <TrustedBySection />
+        <CtaSection />
+      </LayoutWrapper>
     </>
   );
 }

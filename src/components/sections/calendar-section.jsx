@@ -4,6 +4,7 @@ import {
   slideInRight,
 } from "@/components/shared/animated-section";
 import { motion } from "framer-motion";
+import { Container } from "../layout/container";
 
 // ─── Calendar data ────────────────────────────────────────────────────────────
 const DAY_HEADERS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];

@@ -1,16 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { ChevronDown, Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Container } from "@/components/layout/container";
 import { navLinks } from "@/data/navigation";
-import { cn } from "@/lib/utils";
 import { asset } from "@/lib/assets";
+import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronDown, Menu, X } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { Container } from "../layout/container";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,8 +34,8 @@ export function Navbar() {
         isScrolled
           ? "border-b border-white/10 bg-[#070d08]/90 backdrop-blur-xl"
           : isPricing
-          ? ""
-          : "bg-transparent"
+            ? ""
+            : "bg-transparent",
       )}
       style={
         isPricing && !isScrolled
@@ -47,7 +47,10 @@ export function Navbar() {
       }
     >
       <Container>
-        <nav className="flex items-center justify-between" style={{ height: "var(--navbar-height)" }}>
+        <nav
+          className="flex items-center justify-between"
+          style={{ height: "var(--navbar-height)" }}
+        >
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
@@ -68,7 +71,14 @@ export function Navbar() {
                 <Link
                   href={link.href}
                   className="flex items-center gap-1 rounded-md px-3 py-2"
-                  style={{ color: "#FFF", fontFamily: "var(--font-stack-sans-headline), sans-serif", fontSize: "14px", fontStyle: "normal", fontWeight: 300, lineHeight: "20px" }}
+                  style={{
+                    color: "#FFF",
+                    fontFamily: "var(--font-stack-sans-headline), sans-serif",
+                    fontSize: "14px",
+                    fontStyle: "normal",
+                    fontWeight: 300,
+                    lineHeight: "20px",
+                  }}
                 >
                   {link.label}
                   {link.hasDropdown && (
@@ -83,14 +93,34 @@ export function Navbar() {
           <div className="hidden items-center gap-2 md:flex">
             <Button
               variant="ghost"
-              style={{ color: "#FFF", fontFamily: "var(--font-stack-sans-headline), sans-serif", fontSize: "14px", fontStyle: "normal", fontWeight: 300, lineHeight: "20px" }}
+              style={{
+                color: "#FFF",
+                fontFamily: "var(--font-stack-sans-headline), sans-serif",
+                fontSize: "14px",
+                fontStyle: "normal",
+                fontWeight: 300,
+                lineHeight: "20px",
+              }}
               className="hover:bg-white/5"
             >
               Login
             </Button>
             <Button
               className="bg-[#68ef9d] hover:bg-[#68ef9d]"
-              style={{ display: "inline-flex", height: "clamp(36px, 4vw, 45px)", padding: "0 clamp(12px, 2vw, 20px)", alignItems: "center", gap: "6px", color: "#012D12", fontFamily: "var(--font-stack-sans-headline), sans-serif", fontSize: "clamp(14px, 1.5vw, 18px)", fontStyle: "normal", fontWeight: 300, lineHeight: "28px", textAlign: "center" }}
+              style={{
+                display: "inline-flex",
+                height: "clamp(36px, 4vw, 45px)",
+                padding: "0 clamp(12px, 2vw, 20px)",
+                alignItems: "center",
+                gap: "6px",
+                color: "#012D12",
+                fontFamily: "var(--font-stack-sans-headline), sans-serif",
+                fontSize: "clamp(14px, 1.5vw, 18px)",
+                fontStyle: "normal",
+                fontWeight: 300,
+                lineHeight: "28px",
+                textAlign: "center",
+              }}
             >
               Get API Key
             </Button>
@@ -102,7 +132,11 @@ export function Navbar() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </button>
         </nav>
       </Container>

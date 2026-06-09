@@ -1,9 +1,9 @@
 "use client";
 
-import { Container } from "@/components/layout/container";
 import { companies } from "@/data/content";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { Container } from "../layout/container";
 
 // Triple the list so there's always content to the right while dragging
 const marqueeItems = [...companies, ...companies, ...companies];

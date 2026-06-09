@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Container } from "@/components/layout/container";
-import { FeatureCard } from "./feature-card";
 import { staggerContainer } from "@/components/shared/animated-section";
 import { features } from "@/data/content";
+import { motion } from "framer-motion";
+import { Container } from "../layout/container";
+import { FeatureCard } from "./feature-card";
 
 export function FeaturesSection() {
   return (
