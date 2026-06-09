@@ -33,7 +33,7 @@ export function Footer() {
       {/* Background image */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/Footer Background.png"
+        src="/images/footer-background.png"
         alt=""
         aria-hidden="true"
         className="absolute inset-0 h-full w-full object-cover"

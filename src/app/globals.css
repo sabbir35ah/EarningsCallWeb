@@ -2,6 +2,7 @@
 
 @layer base {
   :root {
+    --navbar-height: 68.25px;
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -59,5 +60,14 @@
 
   .animate-marquee:hover {
     animation-play-state: paused;
+  }
+
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

@@ -128,7 +128,7 @@ export function UseCasesSection() {
             {/* Background image */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/Background Shape.png"
+              src="/images/background-shape.png"
               alt=""
               aria-hidden="true"
               className="absolute inset-0 h-full w-full object-cover"

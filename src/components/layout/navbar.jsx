@@ -47,7 +47,7 @@ export function Navbar() {
       }
     >
       <Container>
-        <nav className="flex items-center justify-between" style={{ height: "68.25px" }}>
+        <nav className="flex items-center justify-between" style={{ height: "var(--navbar-height)" }}>
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image

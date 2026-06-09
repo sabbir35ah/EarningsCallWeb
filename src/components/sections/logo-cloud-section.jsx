@@ -129,8 +129,8 @@ export function LogoCloudSection() {
         {/* Scrollable drag track — scrollbar hidden via CSS */}
         <div
           ref={trackRef}
-          className="flex items-start select-none overflow-x-scroll"
-          style={{ cursor: "grab", scrollbarWidth: "none", msOverflowStyle: "none" }}
+          className="flex items-start select-none overflow-x-scroll scrollbar-hide"
+          style={{ cursor: "grab" }}
           onMouseDown={(e) => startDrag(e.pageX)}
           onMouseMove={(e) => moveDrag(e.pageX)}
           onMouseUp={endDrag}
@@ -139,7 +139,6 @@ export function LogoCloudSection() {
           onTouchMove={(e) => moveDrag(e.touches[0].pageX)}
           onTouchEnd={endDrag}
         >
-          <style>{`.logo-track::-webkit-scrollbar { display: none; }`}</style>
           {marqueeItems.map((company, i) => (
             <CompanySlide key={`${company.id}-${i}`} company={company} />
           ))}
