@@ -2,7 +2,6 @@ import { Container } from "@/components/layout/container";
 import { TestimonialCard } from "./testimonial-card";
 import { testimonials } from "@/data/content";
 
-
 export function TestimonialsSection() {
   return (
     <section className="bg-white py-12 sm:py-16 lg:py-24">
@@ -24,21 +23,25 @@ export function TestimonialsSection() {
           >
             What our beloved users say
           </h2>
-          <p style={{
-            color: "#012D12",
-            textAlign: "center",
-            fontFamily: "var(--font-stack-sans-headline), sans-serif",
-            fontSize: "clamp(12px, 2vw, 16px)",
-            fontStyle: "normal",
-            fontWeight: 300,
-            lineHeight: "24px",
-          }}>
-            Real workflows from real users — developers, analysts, and founders building with the API every day.
+          <p
+            style={{
+              color: "#012D12",
+              textAlign: "center",
+              fontFamily: "var(--font-stack-sans-headline), sans-serif",
+              fontSize: "clamp(12px, 2vw, 16px)",
+              fontStyle: "normal",
+              fontWeight: 300,
+              lineHeight: "24px",
+            }}
+          >
+            Real workflows from real users — developers, analysts, and founders
+            building with the API every day.
           </p>
         </div>
 
         {/* Mobile: horizontal snap slider | Desktop: 3-col grid */}
-        <div className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-3"
+        <div
+          className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-3"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {testimonials.map((t, i) => (

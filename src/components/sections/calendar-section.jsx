@@ -1,10 +1,9 @@
 "use client";
-import { motion } from "framer-motion";
 import {
   slideInLeft,
   slideInRight,
 } from "@/components/shared/animated-section";
-import { Container } from "@/components/layout/container";
+import { motion } from "framer-motion";
 
 // ─── Calendar data ────────────────────────────────────────────────────────────
 const DAY_HEADERS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
