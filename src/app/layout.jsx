@@ -61,7 +61,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${stackSansHeadline.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${stackSansHeadline.variable}`}
+    >
       <body>{children}</body>
     </html>
   );
