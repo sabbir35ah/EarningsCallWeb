@@ -1,3 +1,5 @@
+// ─── Plans ────────────────────────────────────────────────────────────────────
+
 export const plans = [
   {
     id: "starter",
@@ -59,20 +61,15 @@ export const plans = [
   },
 ];
 
+// ─── Refund Policy ────────────────────────────────────────────────────────────
+
 export const refundConditions = [
-  {
-    label: "Under 1,000 API calls",
-    desc: "Fewer than 1,000 API calls made on your account.",
-  },
-  {
-    label: "Within 7 days",
-    desc: "Request submitted within 7 days of initial purchase.",
-  },
-  {
-    label: "First purchase only",
-    desc: "Renewals are not covered by this refund policy.",
-  },
+  { label: "Under 1,000 API calls", desc: "Fewer than 1,000 API calls made on your account." },
+  { label: "Within 7 days", desc: "Request submitted within 7 days of initial purchase." },
+  { label: "First purchase only", desc: "Renewals are not covered by this refund policy." },
 ];
+
+// ─── FAQ ──────────────────────────────────────────────────────────────────────
 
 export const faqs = [
   {

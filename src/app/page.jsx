@@ -1,12 +1,12 @@
-import { HeroSection } from "@/components/sections/hero-section";
-import { LogoCloudSection } from "@/components/sections/logo-cloud-section";
-import { FeaturesSection } from "@/components/sections/features-section";
-import { CalendarSection } from "@/components/sections/calendar-section";
-import { BenefitsSection } from "@/components/sections/benefits-section";
-import { UseCasesSection } from "@/components/sections/use-cases-section";
-import { TestimonialsSection } from "@/components/sections/testimonials-section";
-import { TrustedBySection } from "@/components/sections/trusted-by-section";
-import { CtaSection } from "@/components/sections/cta-section";
+import { HeroSection } from "@/components/home/hero-section";
+import { LogoCloudSection } from "@/components/home/logo-cloud-section";
+import { FeaturesSection } from "@/components/home/features-section";
+import { CalendarSection } from "@/components/home/calendar-section";
+import { BenefitsSection } from "@/components/home/benefits-section";
+import { UseCasesSection } from "@/components/home/use-cases-section";
+import { TestimonialsSection } from "@/components/shared/testimonials-section";
+import { TrustedBySection } from "@/components/shared/trusted-by-section";
+import { CtaSection } from "@/components/shared/cta-section";
 import LayoutWrapper from "@/components/shared/layout-wrapper";
 
 export default function HomePage() {

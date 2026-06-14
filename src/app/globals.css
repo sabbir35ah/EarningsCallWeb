@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+@theme {
+  /* Brand font & colors — generates font-headline, text-brand, bg-brand, etc. */
+  --font-headline: var(--font-stack-sans-headline), sans-serif;
+  --color-brand: #012d12;
+  --color-brand-alt: #013214;
+  --color-accent: #4dec8c;
+  --color-surface: #fafafa;
+  --color-muted: #828282;
+}
+
 @layer base {
   :root {
     --navbar-height: 68.25px;
@@ -54,6 +64,77 @@
 }
 
 @layer utilities {
+  /* ── Typography scale ─────────────────────────────────────────────────── */
+
+  /* Section h2 — clamp 16→40px, weight 400, tight leading */
+  .text-headline {
+    font-family: var(--font-stack-sans-headline), sans-serif;
+    font-size: clamp(16px, 4vw, 40px);
+    font-weight: 400;
+    line-height: clamp(30px, 5vw, 48px);
+    letter-spacing: -0.8px;
+  }
+
+  /* Card / subsection h3 — clamp 16→32px */
+  .text-subheading {
+    font-family: var(--font-stack-sans-headline), sans-serif;
+    font-size: clamp(16px, 3vw, 32px);
+    font-weight: 400;
+    line-height: clamp(28px, 4vw, 40px);
+    letter-spacing: -0.5px;
+  }
+
+  /* Hero h1 — clamp 20→60px */
+  .text-hero {
+    font-family: var(--font-stack-sans-headline), sans-serif;
+    font-size: clamp(20px, 5vw, 60px);
+    font-weight: 400;
+    line-height: clamp(36px, 6vw, 72px);
+  }
+
+  /* Body / subtitle — clamp 12→16px, light */
+  .text-body {
+    font-family: var(--font-stack-sans-headline), sans-serif;
+    font-size: clamp(12px, 2vw, 16px);
+    font-weight: 300;
+    line-height: 1.5rem;
+  }
+
+  /* Small body — fixed 14px */
+  .text-body-sm {
+    font-family: var(--font-stack-sans-headline), sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.25rem;
+  }
+
+  /* Footnote / caption — clamp 10→14px */
+  .text-caption {
+    font-family: var(--font-stack-sans-headline), sans-serif;
+    font-size: clamp(10px, 1.5vw, 14px);
+    font-weight: 300;
+    line-height: 1.25rem;
+  }
+
+  /* Stat value — clamp 22→32px, semibold */
+  .text-stat {
+    font-family: var(--font-stack-sans-headline), sans-serif;
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.2px;
+  }
+
+  /* CTA / button label — clamp 14→18px */
+  .text-btn {
+    font-family: var(--font-stack-sans-headline), sans-serif;
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 300;
+    line-height: 1.75rem;
+  }
+
+  /* ── Marquee / scrollbar ──────────────────────────────────────────────── */
+
   .animate-marquee {
     animation: marquee 30s linear infinite;
   }

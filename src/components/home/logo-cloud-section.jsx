@@ -1,7 +1,7 @@
 "use client";
 
-import { companies } from "@/data/content";
-import { motion } from "framer-motion";
+import { FadeUp } from "@/lib/motion";
+import { companies } from "./constants/constants";
 import { useEffect, useRef } from "react";
 import { Container } from "../layout/container";
 
@@ -46,10 +46,7 @@ function CompanySlide({ company }) {
           }}
         />
       </div>
-      <p
-        className="text-name text-center font-medium"
-        style={{ color: "#374151", fontSize: "clamp(10px, 1.5vw, 14px)" }}
-      >
+      <p className="text-name text-center font-medium text-[#374151]" style={{ fontSize: "clamp(10px, 1.5vw, 14px)" }}>
         {company.name}
       </p>
     </div>
@@ -104,25 +101,9 @@ export function LogoCloudSection() {
   return (
     <section className="overflow-hidden border-y border-gray-100 bg-white pt-12 pb-16">
       <Container>
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          style={{
-            color: "#012D12",
-            textAlign: "center",
-            fontFamily: "var(--font-stack-sans-headline), sans-serif",
-            fontSize: "clamp(16px, 4vw, 40px)",
-            fontStyle: "normal",
-            fontWeight: 400,
-            lineHeight: "clamp(30px, 5vw, 48px)",
-            letterSpacing: "-1px",
-            marginBottom: "40px",
-          }}
-        >
+        <FadeUp as="p" className="text-headline text-brand text-center mb-10">
           Access data from 9,000+ companies
-        </motion.p>
+        </FadeUp>
       </Container>
 
       <div className="relative overflow-hidden">

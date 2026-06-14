@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { navLinks } from "@/data/navigation";
 import { asset } from "@/lib/assets";
 import { cn } from "@/lib/utils";
+import { EASE } from "@/lib/motion";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
@@ -28,7 +29,7 @@ export function Navbar() {
     <motion.header
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.5, ease: EASE }}
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         isScrolled
@@ -70,15 +71,7 @@ export function Navbar() {
               <li key={link.label}>
                 <Link
                   href={link.href}
-                  className="flex items-center gap-1 rounded-md px-3 py-2"
-                  style={{
-                    color: "#FFF",
-                    fontFamily: "var(--font-stack-sans-headline), sans-serif",
-                    fontSize: "14px",
-                    fontStyle: "normal",
-                    fontWeight: 300,
-                    lineHeight: "20px",
-                  }}
+                  className="flex items-center gap-1 rounded-md px-3 py-2 text-body-sm text-white"
                 >
                   {link.label}
                   {link.hasDropdown && (
@@ -93,34 +86,13 @@ export function Navbar() {
           <div className="hidden items-center gap-2 md:flex">
             <Button
               variant="ghost"
-              style={{
-                color: "#FFF",
-                fontFamily: "var(--font-stack-sans-headline), sans-serif",
-                fontSize: "14px",
-                fontStyle: "normal",
-                fontWeight: 300,
-                lineHeight: "20px",
-              }}
-              className="hover:bg-white/5"
+              className="hover:bg-white/5 text-body-sm text-white"
             >
               Login
             </Button>
             <Button
-              className="bg-[#68ef9d] hover:bg-[#68ef9d]"
-              style={{
-                display: "inline-flex",
-                height: "clamp(36px, 4vw, 45px)",
-                padding: "0 clamp(12px, 2vw, 20px)",
-                alignItems: "center",
-                gap: "6px",
-                color: "#012D12",
-                fontFamily: "var(--font-stack-sans-headline), sans-serif",
-                fontSize: "clamp(14px, 1.5vw, 18px)",
-                fontStyle: "normal",
-                fontWeight: 300,
-                lineHeight: "28px",
-                textAlign: "center",
-              }}
+              className="bg-[#68ef9d] hover:bg-[#68ef9d] inline-flex items-center gap-1.5 text-brand text-btn"
+              style={{ height: "clamp(36px, 4vw, 45px)", padding: "0 clamp(12px, 2vw, 20px)" }}
             >
               Get API Key
             </Button>
