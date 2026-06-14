@@ -1,6 +1,6 @@
 "use client";
-
 import { AnimatePresence, motion } from "framer-motion";
+import { Minus, Plus, X } from "lucide-react";
 import { useState } from "react";
 
 export function FaqItem({ question, answer }) {
@@ -19,35 +19,9 @@ export function FaqItem({ question, answer }) {
         </span>
         <span className="shrink-0">
           {open ? (
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="sm:w-6 sm:h-6"
-            >
-              <path
-                d="M5 12H19"
-                stroke="#013214"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-            </svg>
+            <Minus size={20} className="text-brand-alt" />
           ) : (
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="sm:w-6 sm:h-6"
-            >
-              <path
-                d="M12 5V19M5 12H19"
-                stroke="#013214"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-            </svg>
+            <Plus size={20} className="text-brand-alt" />
           )}
         </span>
       </button>

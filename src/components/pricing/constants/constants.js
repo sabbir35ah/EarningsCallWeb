@@ -1,3 +1,5 @@
+import { Check, X, Zap } from "lucide-react";
+
 // ─── Plans ────────────────────────────────────────────────────────────────────
 
 export const plans = [
@@ -64,9 +66,18 @@ export const plans = [
 // ─── Refund Policy ────────────────────────────────────────────────────────────
 
 export const refundConditions = [
-  { label: "Under 1,000 API calls", desc: "Fewer than 1,000 API calls made on your account." },
-  { label: "Within 7 days", desc: "Request submitted within 7 days of initial purchase." },
-  { label: "First purchase only", desc: "Renewals are not covered by this refund policy." },
+  {
+    label: "Under 1,000 API calls",
+    desc: "Fewer than 1,000 API calls made on your account.",
+  },
+  {
+    label: "Within 7 days",
+    desc: "Request submitted within 7 days of initial purchase.",
+  },
+  {
+    label: "First purchase only",
+    desc: "Renewals are not covered by this refund policy.",
+  },
 ];
 
 // ─── FAQ ──────────────────────────────────────────────────────────────────────
@@ -119,5 +130,20 @@ export const faqs = [
   {
     q: "Do you cover companies outside of the United States?",
     a: "Yes, we do track companies in many markets such as Canada, Europe and Australia. We only track companies that perform quarterly investor conference calls, and the incidence of companies holding regular calls outside of the USA is much less.",
+  },
+];
+
+export const heroTags = [
+  {
+    label: "Instant access",
+    icon: <Zap size={13} />,
+  },
+  {
+    label: "No hidden fees",
+    icon: <Check size={13} />,
+  },
+  {
+    label: "Cancel anytime",
+    icon: <X size={13} />,
   },
 ];
