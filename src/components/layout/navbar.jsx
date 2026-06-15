@@ -90,10 +90,7 @@ export function Navbar() {
             >
               Login
             </Button>
-            <Button
-              className="bg-[#68ef9d] hover:bg-[#68ef9d] inline-flex items-center gap-1.5 text-brand text-btn"
-              style={{ height: "clamp(36px, 4vw, 45px)", padding: "0 clamp(12px, 2vw, 20px)" }}
-            >
+            <Button variant="accent" size="nav">
               Get API Key
             </Button>
           </div>
@@ -147,7 +144,7 @@ export function Navbar() {
                 >
                   Login
                 </Button>
-                <Button className="w-full bg-[#68ef9d] font-semibold text-black hover:bg-[#68ef9d]">
+                <Button variant="accent" size="nav" className="w-full font-semibold">
                   Get API Key
                 </Button>
               </div>

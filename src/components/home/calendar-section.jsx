@@ -8,40 +8,28 @@ import {
   calendarBullets,
 } from "./constants/constants";
 import { Container } from "../layout/container";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "lucide-react";
 
-// ─── Sub-components ───────────────────────────────────────────────────────────
-
-function EventBadge({ count, isSaturday }) {
+function EventBadge({ count }) {
   return (
-    <span
-      className="mt-1 inline-flex items-center justify-center rounded-full px-1.5 py-0.5 text-[9px] font-semibold leading-none sm:px-2 sm:text-[10px]"
-      style={{
-        backgroundColor: isSaturday ? "#4dec8c" : "#40ff8f",
-        color: "#012d12",
-      }}
-    >
+    <span className="mt-1 inline-flex items-center justify-center rounded-full bg-accent px-1.5 py-0.5 text-[9px] font-semibold leading-none text-brand sm:px-2 sm:text-[10px]">
       {count}
     </span>
   );
 }
 
 function DayCell({ cell, colIndex }) {
-  const isSaturday = colIndex === 6;
   return (
     <div className="flex flex-col items-center py-2 sm:py-3 lg:py-1">
       <span
-        className="text-[10px] font-medium leading-none sm:text-[11px]"
-        style={{
-          color: cell.isPrev
-            ? "rgba(255,255,255,0.3)"
-            : "rgba(255,255,255,0.9)",
-        }}
+        className={`text-[10px] font-medium leading-none sm:text-[11px] ${
+          cell.isPrev ? "text-white/30" : "text-white/90"
+        }`}
       >
         {cell.day}
       </span>
-      {!cell.isPrev && (
-        <EventBadge count={BADGE_COUNTS[colIndex]} isSaturday={isSaturday} />
-      )}
+      {!cell.isPrev && <EventBadge count={BADGE_COUNTS[colIndex]} />}
     </div>
   );
 }
@@ -49,7 +37,6 @@ function DayCell({ cell, colIndex }) {
 function AugustCalendar() {
   return (
     <div className="w-full overflow-hidden rounded-xl">
-      {/* Header */}
       <div className="flex items-center justify-between px-3 py-3 sm:px-4">
         <span className="text-sm font-semibold text-white sm:text-base">
           August
@@ -60,7 +47,6 @@ function AugustCalendar() {
         </div>
       </div>
 
-      {/* Day-of-week headers */}
       <div className="grid grid-cols-7">
         {DAY_HEADERS.map((d) => (
           <div
@@ -72,7 +58,6 @@ function AugustCalendar() {
         ))}
       </div>
 
-      {/* Weeks */}
       <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8">
         {WEEKS.map((week, wi) => (
           <div key={wi} className="grid grid-cols-7">
@@ -86,8 +71,6 @@ function AugustCalendar() {
   );
 }
 
-// ─── Main section ─────────────────────────────────────────────────────────────
-
 export function CalendarSection() {
   return (
     <section
@@ -99,22 +82,14 @@ export function CalendarSection() {
       }}
     >
       <Container>
-        <div
-          className="w-full"
-          style={{
-            background: "rgba(255,255,255,0.07)",
-            border: "1px solid rgba(255,255,255,0.14)",
-            backdropFilter: "blur(12px)",
-            borderRadius: "16px",
-          }}
-        >
+        <div className="w-full rounded-2xl border border-white/14 bg-white/7 backdrop-blur-md">
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            {/* ── LEFT COLUMN ── */}
+            {/* LEFT COLUMN */}
             <SlideIn
               direction="left"
-              className="flex flex-col justify-center px-6 py-10 sm:px-10 sm:py-12 lg:px-21.25 lg:py-11.25 lg:border-r border-white/15"
+              className="flex flex-col justify-center border-white/15 px-6 py-10 sm:px-10 sm:py-12 lg:border-r lg:px-21.25 lg:py-11.25"
             >
-              <h2 className="mb-6 sm:mb-8 text-subheading text-white w-[min(562px,100%)]">
+              <h2 className="mb-6 w-[min(562px,100%)] text-subheading text-white sm:mb-8">
                 Never Miss a Beat with the Earnings Call Calendar
               </h2>
 
@@ -135,7 +110,7 @@ export function CalendarSection() {
                 ))}
               </ul>
 
-              <div className="order-1 min-[576px]:order-2 mb-8 flex flex-wrap gap-x-6 gap-y-4 min-[576px]:mb-0 min-[576px]:mt-8 sm:gap-x-10">
+              <div className="order-1 mb-8 flex flex-wrap gap-x-6 gap-y-4 min-[576px]:order-2 min-[576px]:mb-0 min-[576px]:mt-8 sm:gap-x-10">
                 {calendarStats.map((stat) => (
                   <div key={stat.label} className="flex flex-col">
                     <span className="text-stat text-white">{stat.value}</span>
@@ -144,46 +119,18 @@ export function CalendarSection() {
                 ))}
               </div>
 
-              <button
-                className="order-2 min-[576px]:order-1 mb-0 min-[576px]:mb-8 w-37.5 min-[576px]:48.25 h-10 min-[576px]:h-12.5 text-[12px] min-[576px]:text-[18px] inline-flex items-center justify-center gap-2 rounded-md transition-opacity hover:opacity-90 bg-white text-brand text-btn whitespace-nowrap"
-                style={{ padding: "0 12px" }}
+              <Button
+                variant="white"
+                className="order-2 mb-0 h-10 w-45 px-5! text-[12px] font-light text-btn min-[576px]:order-1 min-[576px]:mb-8 min-[576px]:h-12.5 min-[576px]:w-48.25 min-[576px]:text-[18px]"
               >
-                Go to Calendar
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 22 22"
-                  fill="none"
-                  className="w-[clamp(16px,2vw,22px)] h-[clamp(16px,2vw,22px)]"
-                >
-                  <rect width="22" height="22" rx="2" fill="#1DBF73" />
-                  <path
-                    d="M18.5296 10.5295V11.4706H9.58972V10.5295H18.5296Z"
-                    fill="#013214"
-                  />
-                  <path
-                    d="M18.8623 10.6674C19.0461 10.8511 19.0461 11.149 18.8623 11.3327L14.1571 16.0379L13.4918 15.3726L17.8643 11L13.4918 6.6275L14.1571 5.96216L18.8623 10.6674Z"
-                    fill="#013214"
-                  />
-                  <path
-                    d="M4.88446 10.5295V11.4706H3.94342V10.5295H4.88446Z"
-                    fill="#013214"
-                  />
-                  <path
-                    d="M6.76657 10.5295V11.4706H5.82553V10.5295H6.76657Z"
-                    fill="#013214"
-                  />
-                  <path
-                    d="M8.64871 10.5295V11.4706H7.70767V10.5295H8.64871Z"
-                    fill="#013214"
-                  />
-                </svg>
-              </button>
+                Go to Calendar <Calendar />
+              </Button>
             </SlideIn>
 
-            {/* ── RIGHT COLUMN — Calendar widget ── */}
+            {/* RIGHT COLUMN — Calendar widget */}
             <SlideIn
               direction="right"
-              className="flex items-center justify-center border-t border-white/10 px-6 py-10 sm:px-10 sm:py-12 lg:border-t-0 lg:px-22.5 lg:py-25.75 lg:justify-start"
+              className="flex items-center justify-center border-t border-white/10 px-6 py-10 sm:px-10 sm:py-12 lg:justify-start lg:border-t-0 lg:px-22.5 lg:py-25.75"
             >
               <div className="w-full">
                 <AugustCalendar />

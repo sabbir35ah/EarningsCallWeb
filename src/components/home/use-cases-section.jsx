@@ -1,5 +1,4 @@
 "use client";
-
 import { FadeUp } from "@/lib/motion";
 import { useCaseStats, useCaseTags } from "./constants/constants";
 import { Container } from "../layout/container";

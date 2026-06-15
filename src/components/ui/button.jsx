@@ -17,15 +17,19 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        brand: "bg-[#013214] text-white hover:opacity-90",
+        white: "bg-white text-brand hover:opacity-90",
+        accent: "bg-accent text-brand hover:opacity-90",
+        brand: "bg-brand-alt text-white hover:opacity-90",
         "brand-outline":
-          "border border-[#013214] bg-transparent text-[#013214] hover:opacity-90",
+          "border border-brand-alt bg-transparent text-brand-alt hover:opacity-90",
       },
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-11 rounded-md px-8 text-base",
         icon: "h-9 w-9",
+        cta: "h-[clamp(40px,5vw,50px)] px-[clamp(14px,2vw,20px)] text-btn font-light",
+        nav: "h-[clamp(36px,4vw,45px)] px-[clamp(12px,2vw,20px)] text-btn font-light",
       },
     },
     defaultVariants: {

@@ -63,6 +63,17 @@
   }
 }
 
+@keyframes glow-rise {
+  0%, 100% {
+    transform: translateY(32px) scaleY(0.96);
+    opacity: 0.72;
+  }
+  50% {
+    transform: translateY(-20px) scaleY(1.04);
+    opacity: 1;
+  }
+}
+
 @layer utilities {
   /* ── Typography scale ─────────────────────────────────────────────────── */
 
@@ -136,11 +147,17 @@
   /* ── Marquee / scrollbar ──────────────────────────────────────────────── */
 
   .animate-marquee {
-    animation: marquee 30s linear infinite;
+    animation: marquee 22s linear infinite;
+    will-change: transform;
   }
 
   .animate-marquee:hover {
     animation-play-state: paused;
+  }
+
+  .animate-glow-rise {
+    animation: glow-rise 5s ease-in-out infinite;
+    will-change: transform, opacity;
   }
 
   .scrollbar-hide {

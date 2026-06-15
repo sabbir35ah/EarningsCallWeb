@@ -43,11 +43,8 @@ export function PlanCard({ plan, billing }) {
 
         <Button
           variant={plan.featured ? "brand" : "brand-outline"}
-          className="mt-6 w-full rounded-sm font-headline font-light leading-7"
-          style={{
-            height: "clamp(42px, 5vw, 50px)",
-            fontSize: "clamp(14px, 2vw, 18px)",
-          }}
+          size="cta"
+          className="mt-6 w-full rounded-sm"
         >
           Get Started
         </Button>
