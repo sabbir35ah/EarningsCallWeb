@@ -14,14 +14,29 @@ export function FeatureCard({ icon, title, description, index }) {
 
       <div className="mt-[clamp(24px,4vw,56px)]">
         <h3
-          className="mb-2 font-semibold leading-snug text-brand-alt"
-          style={{ fontSize: "clamp(14px, 2vw, 1.05rem)" }}
+          className="mb-2 text-brand-alt"
+          style={{
+            color: "#013214",
+            fontFamily: "var(--font-stack-sans-headline)",
+            fontSize: "20px",
+            fontStyle: "normal",
+            fontWeight: 400,
+            lineHeight: "28px",
+          }}
         >
           {title}
         </h3>
         <p
-          className="font-light leading-relaxed text-brand-alt/75"
-          style={{ fontSize: "clamp(12px, 1.5vw, 0.8125rem)" }}
+          className="text-brand-alt"
+          style={{
+            width: "306px",
+            color: "#013214",
+            fontFamily: "var(--font-stack-sans-headline)",
+            fontSize: "14px",
+            fontStyle: "normal",
+            fontWeight: 300,
+            lineHeight: "20px",
+          }}
         >
           {description}
         </p>

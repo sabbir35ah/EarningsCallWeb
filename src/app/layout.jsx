@@ -1,4 +1,4 @@
-import { Inter, Stack_Sans_Headline } from "next/font/google";
+import { Inter, Stack_Sans_Headline, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -6,6 +6,12 @@ import { Footer } from "@/components/layout/footer";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
   display: "swap",
 });
 
@@ -65,7 +71,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${stackSansHeadline.variable}`}
+      className={`${inter.variable} ${stackSansHeadline.variable} ${geistMono.variable}`}
     >
       <body>{children}</body>
     </html>

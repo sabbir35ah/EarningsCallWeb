@@ -50,7 +50,7 @@ export const footerQuickLinks = [
 
 export const footerResources = [
   { label: "API Resource", href: "#" },
-  { label: "API Details", href: "#" },
+  { label: "API Details", href: "/api-details" },
   { label: "Blog", href: "#" },
 ];
 
