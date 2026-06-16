@@ -77,7 +77,7 @@ export function Footer() {
                 Download App
               </p>
               <div className="flex flex-col gap-2">
-                <a href="#" aria-label="Get it on Google Play">
+                <a href="https://play.google.com/store/apps/details?id=biz.earningscall.app" aria-label="Get it on Google Play">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/Play_Store.png"
@@ -86,7 +86,7 @@ export function Footer() {
                     height={40}
                   />
                 </a>
-                <a href="#" aria-label="Download on the App Store">
+                <a href="https://apps.apple.com/app/id1626859464" aria-label="Download on the App Store">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/App_Store.png"
