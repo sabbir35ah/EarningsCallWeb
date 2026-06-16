@@ -55,9 +55,9 @@ export const footerResources = [
 ];
 
 export const footerSocials = [
-  { label: "Github", href: "#" },
-  { label: "Facebook", href: "#" },
-  { label: "Instagram", href: "#" },
-  { label: "X", href: "#" },
-  { label: "Linkedin", href: "#" },
+  { label: "Github", href: "https://github.com/EarningsCall" },
+  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=100088689434387" },
+  { label: "Instagram", href: "https://www.instagram.com/earningscallapp/" },
+  { label: "X", href: "https://twitter.com/EarningsCallApp" },
+  { label: "Linkedin", href: "https://www.linkedin.com/company/earningscall/" },
 ];

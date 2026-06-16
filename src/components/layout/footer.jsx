@@ -110,6 +110,8 @@ export function Footer() {
                 <Link
                   key={s.label}
                   href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-1 transition-opacity hover:opacity-70 text-caption text-brand"
                 >
                   {s.label}
