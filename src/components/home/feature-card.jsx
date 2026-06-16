@@ -14,11 +14,10 @@ export function FeatureCard({ icon, title, description, index }) {
 
       <div className="mt-[clamp(24px,4vw,56px)]">
         <h3
-          className="mb-2 text-brand-alt"
+          className="mb-2 text-brand-alt text-[14px] 991:text-[20px]"
           style={{
             color: "#013214",
             fontFamily: "var(--font-stack-sans-headline)",
-            fontSize: "20px",
             fontStyle: "normal",
             fontWeight: 400,
             lineHeight: "28px",

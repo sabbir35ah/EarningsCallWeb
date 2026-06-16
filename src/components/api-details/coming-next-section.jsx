@@ -65,17 +65,15 @@ function ComingNextCard({ Icon, title, description, tags, index }) {
 
 export function ComingNextSection() {
   return (
-    <section style={{ paddingTop: "80px", paddingBottom: "80px" }}>
+    <section className="py-8 991:py-20">
       <Container>
         {/* Section heading */}
-        <FadeUp className="mb-[148px] flex flex-col items-center text-center">
+        <FadeUp className="mb-8 991:mb-[148px] flex flex-col items-center text-center">
           <h2
-            className="mb-3 text-brand"
+            className="mb-3 text-brand text-[16px] leading-[24px] 991:text-[clamp(24px,4vw,40px)] 991:leading-[clamp(32px,5vw,48px)]"
             style={{
               fontFamily: "var(--font-stack-sans-headline)",
-              fontSize: "clamp(24px, 4vw, 40px)",
               fontWeight: 400,
-              lineHeight: "clamp(32px, 5vw, 48px)",
               letterSpacing: "-0.8px",
             }}
           >

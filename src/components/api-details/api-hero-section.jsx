@@ -27,17 +27,15 @@ function ArrowIcon() {
 
 export function ApiHeroSection() {
   return (
-    <section className="relative overflow-hidden pb-20 sm:pb-24 lg:pb-32" style={{ paddingTop: "136px", backgroundColor: "#FAFAFA" }}>
+    <section className="relative overflow-hidden pt-[60px] pb-12 991:pt-[136px] 991:pb-20 lg:pb-32" style={{ backgroundColor: "#FAFAFA" }}>
       <Container>
         <FadeUp className="flex flex-col items-center text-center">
           {/* Heading */}
           <h1
-            className="mb-6 text-brand"
+            className="mb-6 text-brand text-[20px] leading-[28px] 991:text-[clamp(32px,5vw,60px)] 991:leading-[clamp(40px,6vw,72px)]"
             style={{
               fontFamily: "var(--font-stack-sans-headline)",
-              fontSize: "clamp(32px, 5vw, 60px)",
               fontWeight: 400,
-              lineHeight: "clamp(40px, 6vw, 72px)",
               letterSpacing: "-0.8px",
             }}
           >
@@ -66,10 +64,9 @@ export function ApiHeroSection() {
               asChild
               variant="brand"
               size="cta"
-              className="text-white [&_svg]:size-[22px]"
+              className="text-white [&_svg]:size-[22px] text-[12px] 991:text-[18px]"
               style={{
                 fontFamily: "var(--font-stack-sans-headline)",
-                fontSize: "18px",
                 fontWeight: 300,
                 lineHeight: "28px",
               }}
@@ -82,9 +79,9 @@ export function ApiHeroSection() {
             <Button
               variant="brand-outline"
               size="cta"
+              className="text-[12px] 991:text-[18px]"
               style={{
                 fontFamily: "var(--font-stack-sans-headline)",
-                fontSize: "18px",
                 fontWeight: 300,
                 lineHeight: "28px",
               }}
@@ -94,17 +91,15 @@ export function ApiHeroSection() {
           </div>
 
           {/* Stats row */}
-          <div className="flex flex-wrap items-start justify-center gap-8 sm:gap-14 lg:gap-[160px]">
+          <div className="flex flex-nowrap items-start justify-center gap-3 sm:gap-6 991:flex-wrap 991:gap-14 lg:gap-[160px]">
             {heroStats.map((stat) => (
               <div key={stat.label} className="flex flex-col items-center gap-1">
                 <span
-                  className="text-brand"
+                  className="text-brand text-[20px] leading-[28px] 991:text-[40px] 991:leading-[48px]"
                   style={{
                     fontFamily: "var(--font-stack-sans-headline)",
-                    fontSize: "40px",
                     fontStyle: "normal",
                     fontWeight: 400,
-                    lineHeight: "48px",
                     letterSpacing: "-0.8px",
                     color: "#013214",
                   }}
@@ -112,10 +107,9 @@ export function ApiHeroSection() {
                   {stat.value}
                 </span>
                 <span
-                  className="text-brand/70"
+                  className="text-brand/70 text-[10px] 991:text-[clamp(12px,1.5vw,16px)]"
                   style={{
                     fontFamily: "var(--font-stack-sans-headline)",
-                    fontSize: "clamp(12px, 1.5vw, 16px)",
                     fontWeight: 300,
                     lineHeight: "24px",
                   }}

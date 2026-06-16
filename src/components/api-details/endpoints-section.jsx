@@ -26,23 +26,22 @@ function ArrowIcon() {
 
 export function EndpointsSection() {
   return (
-    <section style={{ paddingTop: "80px", paddingBottom: "80px" }}>
+    <section className="py-8 991:py-20">
       <Container>
         <div className="overflow-hidden rounded-xl bg-brand-alt">
-          <div className="grid grid-cols-1 lg:grid-cols-2" style={{ height: "608px", padding: "37px" }}>
+          <div
+            className="grid grid-cols-1 lg:grid-cols-2 p-4 991:p-[37px] 991:h-[608px]"
+          >
             {/* LEFT — copy + tags + button */}
             <SlideIn
               direction="left"
-              className="flex flex-col justify-start px-4 py-4 sm:px-6 sm:py-6 lg:px-8 lg:py-8"
-              style={{ width: "540px" }}
+              className="flex flex-col justify-start p-3 991:px-8 991:py-8 w-full 991:w-[540px]"
             >
               <h2
-                className="mb-6 text-white"
+                className="mb-3 991:mb-6 text-white text-[14px] leading-[20px] 991:text-[clamp(22px,3vw,32px)] 991:leading-[clamp(30px,4vw,40px)]"
                 style={{
                   fontFamily: "var(--font-stack-sans-headline)",
-                  fontSize: "clamp(22px, 3vw, 32px)",
                   fontWeight: 400,
-                  lineHeight: "clamp(30px, 4vw, 40px)",
                   letterSpacing: "-0.5px",
                 }}
               >
@@ -50,12 +49,10 @@ export function EndpointsSection() {
               </h2>
 
               <p
-                className="mb-8 text-white/80"
+                className="mb-4 991:mb-8 text-white/80 text-[12px] leading-[18px] 991:text-[clamp(14px,1.8vw,16px)] 991:leading-[24px]"
                 style={{
                   fontFamily: "var(--font-stack-sans-headline)",
-                  fontSize: "clamp(14px, 1.8vw, 16px)",
                   fontWeight: 300,
-                  lineHeight: "24px",
                 }}
               >
                 Every endpoint returns structured JSON with a consistent schema.
@@ -64,25 +61,21 @@ export function EndpointsSection() {
               </p>
 
               {/* Tech tags */}
-              <div className="mb-10 flex flex-wrap gap-2">
+              <div className="mb-4 991:mb-10 flex flex-wrap gap-1.5 991:gap-2">
                 {techTags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-white"
+                    className="text-white text-[11px] leading-[16px] h-[28px] px-3 991:text-[clamp(12px,1.5vw,16px)] 991:leading-[24px] 991:h-[36px] 991:px-5"
                     style={{
                       display: "inline-flex",
-                      height: "36px",
-                      padding: "10px 20px",
                       justifyContent: "center",
                       alignItems: "center",
-                      gap: "10px",
+                      gap: "6px",
                       borderRadius: "33px",
                       border: "1px solid rgba(255, 255, 255, 0.12)",
                       background: "rgba(255, 255, 255, 0.17)",
                       fontFamily: "var(--font-stack-sans-headline)",
-                      fontSize: "clamp(12px, 1.5vw, 16px)",
                       fontWeight: 300,
-                      lineHeight: "24px",
                     }}
                   >
                     {tag}
@@ -95,10 +88,9 @@ export function EndpointsSection() {
                 <Button
                   variant="white"
                   size="cta"
-                  className="text-brand-alt [&_svg]:size-[22px]"
+                  className="text-brand-alt h-[32px] px-3 text-[11px] 991:h-[clamp(40px,5vw,50px)] 991:px-[clamp(14px,2vw,20px)] 991:text-[18px] [&_svg]:size-[14px] 991:[&_svg]:size-[22px]"
                   style={{
                     fontFamily: "var(--font-stack-sans-headline)",
-                    fontSize: "18px",
                     fontWeight: 300,
                     lineHeight: "28px",
                   }}
@@ -112,32 +104,28 @@ export function EndpointsSection() {
             {/* RIGHT — endpoint list */}
             <SlideIn
               direction="right"
-              className="flex flex-col justify-start px-4 py-4 sm:px-6 sm:py-6 lg:px-8 lg:py-8"
+              className="flex flex-col justify-start p-3 991:px-8 991:py-8"
             >
               <div className="flex flex-col">
                 {apiEndpoints.map((endpoint) => (
-                  <div key={endpoint.path} className="flex flex-col gap-1.5 py-3 first:pt-0 last:pb-0">
-                    <div className="flex items-center gap-3" style={{ marginBottom: "20px" }}>
+                  <div key={endpoint.path} className="flex flex-col py-2 991:py-3 first:pt-0 last:pb-0">
+                    <div className="flex items-center gap-2 991:gap-3 mb-1.5 991:mb-5">
                       <span
-                        className="shrink-0 rounded-sm bg-[#2ed674] px-2.5 py-0.5 text-brand-alt"
+                        className="shrink-0 rounded-sm bg-[#2ed674] text-brand-alt px-1.5 py-0.5 991:px-2.5 text-[10px] leading-[16px] 991:text-[13px] 991:leading-[20px]"
                         style={{
                           fontFamily: "var(--font-stack-sans-headline)",
-                          fontSize: "13px",
                           fontWeight: 300,
-                          lineHeight: "20px",
                         }}
                       >
                         GET
                       </span>
                       <code
-                        className="truncate"
+                        className="truncate text-[11px] leading-[16px] 991:text-[14px]"
                         style={{
                           color: "#8AB89A",
                           fontFamily: '"Geist Mono", var(--font-geist-mono), monospace',
-                          fontSize: "14px",
                           fontStyle: "normal",
                           fontWeight: 400,
-                          lineHeight: "16px",
                           letterSpacing: "0.2px",
                         }}
                       >
@@ -145,14 +133,12 @@ export function EndpointsSection() {
                       </code>
                     </div>
                     <p
+                      className="text-[11px] leading-[16px] mb-1 991:text-[14px] 991:leading-[20px] 991:mb-2"
                       style={{
                         color: "#FFF",
                         fontFamily: "var(--font-stack-sans-headline)",
-                        fontSize: "14px",
                         fontStyle: "normal",
                         fontWeight: 300,
-                        lineHeight: "20px",
-                        marginBottom: "8px",
                       }}
                     >
                       {endpoint.description}

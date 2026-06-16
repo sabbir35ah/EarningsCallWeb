@@ -7,17 +7,15 @@ import { features } from "@/components/home/constants/constants";
 
 export function WhyChooseSection() {
   return (
-    <section className="bg-surface pt-16 sm:pt-20 lg:pt-24" style={{ paddingBottom: "80px" }}>
+    <section className="bg-surface pt-8 pb-8 991:pt-16 991:pb-20 lg:pt-24">
       <Container>
         {/* Section heading */}
-        <FadeUp className="mb-24 text-center">
+        <FadeUp className="mb-8 991:mb-24 text-center">
           <h2
-            className="text-brand"
+            className="text-brand text-[16px] leading-[24px] 991:text-[clamp(24px,4vw,40px)] 991:leading-[clamp(32px,5vw,48px)]"
             style={{
               fontFamily: "var(--font-stack-sans-headline)",
-              fontSize: "clamp(24px, 4vw, 40px)",
               fontWeight: 400,
-              lineHeight: "clamp(32px, 5vw, 48px)",
               letterSpacing: "-0.8px",
             }}
           >
