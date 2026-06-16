@@ -57,11 +57,11 @@ export function Navbar() {
             <Image
               src={asset.logo("logo.svg")}
               alt="EarningsCall"
-              width={199}
-              height={45}
+              width={230}
+              height={70}
               priority
               unoptimized
-              style={{ width: "clamp(130px, 20vw, 199px)", height: "auto" }}
+              style={{ width: "clamp(150px, 49vw, 250px)", height: "auto" }}
             />
           </Link>
 

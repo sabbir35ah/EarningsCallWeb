@@ -53,11 +53,11 @@ export function Footer() {
                 <Image
                   src={asset.logo("logo.svg")}
                   alt="EarningsCall"
-                  width={199}
-                  height={45}
+                  width={230}
+                  height={70}
                   unoptimized
                   priority
-                  style={{ width: "clamp(130px, 20vw, 199px)", height: "auto" }}
+                  style={{ width: "clamp(150px, 49vw, 250px)", height: "auto" }}
                 />
               </Link>
               <p className="font-headline font-light text-[#A4A4A4] text-xs leading-4.75 max-w-86.75">
