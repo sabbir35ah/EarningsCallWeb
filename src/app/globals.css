@@ -8,6 +8,9 @@
   --color-accent: #4dec8c;
   --color-surface: #fafafa;
   --color-muted: #828282;
+
+  /* Custom breakpoint for 991px */
+  --breakpoint-991: 991px;
 }
 
 @layer base {

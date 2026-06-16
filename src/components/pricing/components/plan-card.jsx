@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export function PlanCard({ plan, billing }) {
   const price = billing === "annual" ? plan.annualPrice : plan.monthlyPrice;
@@ -44,7 +45,13 @@ export function PlanCard({ plan, billing }) {
         <Button
           variant={plan.featured ? "brand" : "brand-outline"}
           size="cta"
-          className="mt-6 w-full rounded-sm"
+          className={cn("mt-6 w-full rounded-sm", plan.featured && "text-white")}
+          style={{
+            fontSize: "18px",
+            fontStyle: "normal",
+            fontWeight: 300,
+            lineHeight: "28px",
+          }}
         >
           Get Started
         </Button>

@@ -36,7 +36,7 @@ function ClientItem({ client }) {
 
 export function TrustedBySection() {
   return (
-    <section className="overflow-hidden bg-surface py-12">
+    <section className="overflow-hidden bg-[#f2f2f2] py-12">
       <Container>
         <p
           className="mb-8 text-center font-headline font-normal text-brand"
@@ -54,12 +54,12 @@ export function TrustedBySection() {
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16"
-          style={{ background: "linear-gradient(to right, #fafafa, transparent)" }}
+          style={{ background: "linear-gradient(to right, #f2f2f2, transparent)" }}
         />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16"
-          style={{ background: "linear-gradient(to left, #fafafa, transparent)" }}
+          style={{ background: "linear-gradient(to left, #f2f2f2, transparent)" }}
         />
 
         <div className="flex w-max animate-marquee items-center">

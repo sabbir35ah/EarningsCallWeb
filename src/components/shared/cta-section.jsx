@@ -2,7 +2,6 @@
 
 import { SlideIn } from "@/lib/motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 
 export function CtaSection() {
   return (
@@ -45,8 +44,32 @@ export function CtaSection() {
               simple to get going, so you can begin creating in no time.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button variant="brand" size="cta" className="[&_svg]:size-5">
-                Test Drive Our API <ArrowRight />
+              <Button
+                variant="brand"
+                size="cta"
+                className="w-auto h-[42px] px-4 text-[16px] 991:w-[213px] 991:h-[50px] 991:px-5 991:text-[18px] text-white [&_svg]:size-[18px] 991:[&_svg]:size-[22px]"
+                style={{
+                  fontFamily: "var(--font-stack-sans-headline)",
+                  fontStyle: "normal",
+                  fontWeight: 300,
+                  lineHeight: "28px",
+                }}
+              >
+                Test Drive Our API
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 22 22"
+                  fill="none"
+                >
+                  <rect width="22" height="22" rx="2" fill="#1DBF73" />
+                  <path d="M18.5296 10.5293V11.4703H9.58972V10.5293H18.5296Z" fill="#013214" />
+                  <path d="M18.8622 10.6671C19.046 10.8509 19.046 11.1487 18.8622 11.3325L14.157 16.0377L13.4917 15.3723L17.8642 10.9998L13.4917 6.62726L14.157 5.96191L18.8622 10.6671Z" fill="#013214" />
+                  <path d="M4.8844 10.5293V11.4703H3.94336V10.5293H4.8844Z" fill="#013214" />
+                  <path d="M6.7666 10.5293V11.4703H5.82556V10.5293H6.7666Z" fill="#013214" />
+                  <path d="M8.64868 10.5293V11.4703H7.70764V10.5293H8.64868Z" fill="#013214" />
+                </svg>
               </Button>
               <Button variant="brand-outline" size="cta">
                 View API Doc

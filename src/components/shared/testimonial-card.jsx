@@ -8,7 +8,7 @@ export function TestimonialCard({ testimonial, index }) {
     <FadeUp
       margin="-60px"
       delay={index * 0.1}
-      className="flex h-full flex-col rounded-xl p-5 sm:p-6 lg:p-8 bg-surface"
+      className="flex h-full flex-col rounded-xl p-5 sm:p-6 lg:p-8 bg-[#f2f2f2]"
     >
       {/* Quotation SVG icon */}
       <div className="mb-4 sm:mb-5">

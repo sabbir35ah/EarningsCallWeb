@@ -9,7 +9,6 @@ import {
 } from "./constants/constants";
 import { Container } from "../layout/container";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "lucide-react";
 
 function EventBadge({ count }) {
   return (
@@ -114,7 +113,7 @@ export function CalendarSection() {
                 {calendarStats.map((stat) => (
                   <div key={stat.label} className="flex flex-col">
                     <span className="text-stat text-white">{stat.value}</span>
-                    <span className="text-xs text-white/55">{stat.label}</span>
+                    <span className="text-xs text-white font-light">{stat.label}</span>
                   </div>
                 ))}
               </div>
@@ -123,7 +122,15 @@ export function CalendarSection() {
                 variant="white"
                 className="order-2 mb-0 h-10 w-45 px-5! text-[12px] font-light text-btn min-[576px]:order-1 min-[576px]:mb-8 min-[576px]:h-12.5 min-[576px]:w-48.25 min-[576px]:text-[18px]"
               >
-                Go to Calendar <Calendar />
+                Go to Calendar
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <rect width="22" height="22" rx="2" fill="#1DBF73" />
+                  <path d="M18.5296 10.5295V11.4706H9.58972V10.5295H18.5296Z" fill="#013214" />
+                  <path d="M18.8623 10.6674C19.0461 10.8511 19.0461 11.149 18.8623 11.3327L14.1571 16.0379L13.4918 15.3726L17.8643 11L13.4918 6.6275L14.1571 5.96216L18.8623 10.6674Z" fill="#013214" />
+                  <path d="M4.88446 10.5295V11.4706H3.94342V10.5295H4.88446Z" fill="#013214" />
+                  <path d="M6.76657 10.5295V11.4706H5.82553V10.5295H6.76657Z" fill="#013214" />
+                  <path d="M8.64871 10.5295V11.4706H7.70767V10.5295H8.64871Z" fill="#013214" />
+                </svg>
               </Button>
             </SlideIn>
 

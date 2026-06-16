@@ -13,7 +13,7 @@ const stackSansHeadline = Stack_Sans_Headline({
   subsets: ["latin"],
   variable: "--font-stack-sans-headline",
   display: "swap",
-  weight: ["400"],
+  weight: ["300", "400"],
 });
 
 export const metadata = {
