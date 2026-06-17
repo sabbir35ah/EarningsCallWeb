@@ -16,7 +16,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-  const isPricing = pathname === "/pricing" || pathname === "/api-details";
+  const isPricing = pathname === "/pricing";
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 10);

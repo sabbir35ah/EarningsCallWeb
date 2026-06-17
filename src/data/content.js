@@ -49,7 +49,7 @@ export const footerQuickLinks = [
 ];
 
 export const footerResources = [
-  { label: "API Resource", href: "#" },
+  { label: "API Resource", href: "/api-guide" },
   { label: "API Details", href: "/api-details" },
   { label: "Blog", href: "#" },
 ];

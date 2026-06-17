@@ -16,7 +16,7 @@ export const metadata = {
 export default function ApiDetailsPage() {
   return (
     <LayoutWrapper>
-      <div style={{ height: "var(--navbar-height)" }} />
+      <div style={{ height: "var(--navbar-height)", background: "linear-gradient(rgb(0, 43, 20) 0%, rgb(0, 43, 20) 100%)" }} />
       <ApiHeroSection />
       <WhyChooseSection />
       <EndpointsSection />

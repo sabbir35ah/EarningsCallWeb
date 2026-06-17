@@ -170,7 +170,7 @@ export const WEEKS = [
 ];
 
 export const calendarStats = [
-  { value: "55k+", label: "Total Call" },
+  { value: "120K", label: "Call Covered" },
   { value: "9000+", label: "Companies" },
   { value: "Live", label: "Updates" },
 ];

@@ -31,7 +31,7 @@ export const heroStats = [
   { value: "9,000+", label: "Companies covered" },
   { value: "110ms", label: "Avg. response time" },
   { value: "5+ yrs", label: "Historical depth" },
-  { value: "99.9%", label: "Uptime SLA" },
+  { value: "120K", label: "Call Covered" },
 ];
 
 export const apiEndpoints = [

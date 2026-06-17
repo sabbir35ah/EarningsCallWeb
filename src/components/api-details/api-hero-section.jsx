@@ -27,12 +27,26 @@ function ArrowIcon() {
 
 export function ApiHeroSection() {
   return (
-    <section className="relative overflow-hidden pt-[60px] pb-12 991:pt-[136px] 991:pb-20 lg:pb-32" style={{ backgroundColor: "#FAFAFA" }}>
-      <Container>
+    <section
+      className="relative overflow-hidden pt-[60px] pb-12 991:pt-[136px] 991:pb-20 lg:pb-32"
+      style={{ background: "linear-gradient(180deg, rgb(0,43,20) 0%, rgb(1,67,31) 100%)" }}
+    >
+      {/* Animated rising glow layer */}
+      <div
+        className="animate-glow-rise pointer-events-none absolute inset-0"
+        style={{
+          background: `
+            radial-gradient(ellipse 100% 90% at 50% 108%, rgba(78,255,145,0.9) 0%, rgba(76,255,140,0.42) 42%, transparent 75%),
+            radial-gradient(ellipse 60% 70% at 8% 115%, rgba(76,240,140,0.6) 0%, transparent 68%),
+            radial-gradient(ellipse 60% 70% at 92% 115%, rgba(76,240,140,0.6) 0%, transparent 68%)
+          `,
+        }}
+      />
+      <Container className="relative z-10">
         <FadeUp className="flex flex-col items-center text-center">
           {/* Heading */}
           <h1
-            className="mb-6 text-brand text-[20px] leading-[28px] 991:text-[clamp(32px,5vw,60px)] 991:leading-[clamp(40px,6vw,72px)]"
+            className="mb-6 text-white text-[20px] leading-[28px] 991:text-[clamp(32px,5vw,60px)] 991:leading-[clamp(40px,6vw,72px)]"
             style={{
               fontFamily: "var(--font-stack-sans-headline)",
               fontWeight: 400,
@@ -46,7 +60,7 @@ export function ApiHeroSection() {
 
           {/* Subtitle */}
           <p
-            className="mb-10 max-w-[549px] text-brand"
+            className="mb-10 max-w-[549px] text-white/80"
             style={{
               fontFamily: "var(--font-stack-sans-headline)",
               fontSize: "clamp(14px, 1.8vw, 16px)",
@@ -79,7 +93,7 @@ export function ApiHeroSection() {
             <Button
               variant="brand-outline"
               size="cta"
-              className="text-[12px] 991:text-[18px]"
+              className="text-[12px] 991:text-[18px] !border-white/40 !text-white"
               style={{
                 fontFamily: "var(--font-stack-sans-headline)",
                 fontWeight: 300,
@@ -95,19 +109,18 @@ export function ApiHeroSection() {
             {heroStats.map((stat) => (
               <div key={stat.label} className="flex flex-col items-center gap-1">
                 <span
-                  className="text-brand text-[20px] leading-[28px] 991:text-[40px] 991:leading-[48px]"
+                  className="text-white text-[20px] leading-[28px] 991:text-[40px] 991:leading-[48px]"
                   style={{
                     fontFamily: "var(--font-stack-sans-headline)",
                     fontStyle: "normal",
                     fontWeight: 400,
                     letterSpacing: "-0.8px",
-                    color: "#013214",
                   }}
                 >
                   {stat.value}
                 </span>
                 <span
-                  className="text-brand/70 text-[10px] 991:text-[clamp(12px,1.5vw,16px)]"
+                  className="text-white/70 text-[10px] 991:text-[clamp(12px,1.5vw,16px)]"
                   style={{
                     fontFamily: "var(--font-stack-sans-headline)",
                     fontWeight: 300,
