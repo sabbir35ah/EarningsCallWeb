@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { navLinks } from "@/data/navigation";
 import { asset } from "@/lib/assets";
 import { cn } from "@/lib/utils";
-import { EASE } from "@/lib/motion";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
@@ -26,10 +25,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <motion.header
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: EASE }}
+    <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         isScrolled
@@ -152,6 +148,6 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }
