@@ -5,6 +5,12 @@ import { Copy, Check } from "lucide-react";
 import { FadeUp } from "@/lib/motion";
 import { endpoints } from "./constants";
 
+const CopySvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 23.735 23.734" fill="currentColor">
+    <path d="M23.092,2.16H8.623a2.8,2.8,0,0,0-2.793,2.8V5.83H4.953a2.8,2.8,0,0,0-2.793,2.8v14.46a2.8,2.8,0,0,0,2.793,2.8H19.422a2.805,2.805,0,0,0,2.8-2.8v-.867h.867a2.806,2.806,0,0,0,2.8-2.8V4.962a2.806,2.806,0,0,0-2.8-2.8ZM20.51,23.093a1.088,1.088,0,0,1-1.087,1.087H4.953a1.084,1.084,0,0,1-1.079-1.087V8.632A1.085,1.085,0,0,1,4.953,7.544H19.422A1.089,1.089,0,0,1,20.51,8.632v14.46Zm3.67-3.67a1.089,1.089,0,0,1-1.088,1.088h-.867V8.632a2.805,2.805,0,0,0-2.8-2.8H7.545V4.962A1.084,1.084,0,0,1,8.623,3.875H23.092A1.088,1.088,0,0,1,24.18,4.962Z" transform="translate(-2.16 -2.16)" />
+  </svg>
+);
+
 function CopyButton({ text }) {
   const [copied, setCopied] = useState(false);
   function handleCopy() {
@@ -20,6 +26,59 @@ function CopyButton({ text }) {
     >
       {copied ? <Check size={14} className="text-[#2ed674]" /> : <Copy size={14} />}
     </button>
+  );
+}
+
+function ExampleBlock({ ex }) {
+  const [curlCopied, setCurlCopied] = useState(false);
+  const [resCopied, setResCopied] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+
+  function copyCurl() {
+    navigator.clipboard.writeText(ex.curl);
+    setCurlCopied(true);
+    setTimeout(() => setCurlCopied(false), 2000);
+  }
+
+  function copyRes() {
+    navigator.clipboard.writeText(ex.response);
+    setResCopied(true);
+    setTimeout(() => setResCopied(false), 2000);
+  }
+
+  return (
+    <div className="agd-example">
+      <h4 className="agd-example-title">{ex.title}</h4>
+      {ex.note && <p className="agd-example-note">{ex.note}</p>}
+
+      <div className="agd-code-block">
+        <div className="agd-code-header">
+          <span className="agd-code-lang">cURL</span>
+          <button className="agd-code-copy" onClick={copyCurl} title="Copy">
+            {curlCopied ? <Check size={14} color="#2ed674" /> : <CopySvg />}
+          </button>
+        </div>
+        <pre className="agd-code-pre">{ex.curl}</pre>
+      </div>
+
+      <h4 className="agd-example-title">Example Response</h4>
+      <div className="agd-code-block agd-output-block">
+        <div className="agd-code-header">
+          <span className="agd-code-lang">JSON Response</span>
+          <div className="agd-code-actions">
+            <button className="agd-expand-btn" onClick={() => setExpanded(!expanded)}>
+              {expanded ? "Collapse" : "Expand"}
+            </button>
+            <button className="agd-code-copy" onClick={copyRes} title="Copy">
+              {resCopied ? <Check size={14} color="#2ed674" /> : <CopySvg />}
+            </button>
+          </div>
+        </div>
+        <pre className="agd-code-pre" style={{ maxHeight: expanded ? "none" : "320px", overflow: "auto" }}>
+          {ex.response}
+        </pre>
+      </div>
+    </div>
   );
 }
 
@@ -44,7 +103,7 @@ function SectionLabel({ children }) {
 function EndpointCard({ endpoint }) {
   return (
     <FadeUp id={endpoint.id} margin="-40px" className="scroll-mt-36 mb-6 last:mb-0">
-      <div className="rounded-xl border border-[#d7d7d7] bg-[#fafafa] p-6">
+      <div className="rounded-xl border border-[#d7d7d7] bg-white p-6">
       {/* Title row */}
       <div className="mb-4 flex flex-wrap items-center gap-2.5">
         <span className="rounded bg-[#2ed674] px-2.5 py-0.5 text-brand-alt text-[11px] shrink-0"
@@ -128,8 +187,8 @@ function EndpointCard({ endpoint }) {
         </div>
       </div>
 
-      {/* Returns + Status Codes row */}
-      <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+      {/* Returns + Status Codes */}
+      <div className="mb-6 flex flex-col gap-4">
         <div>
           <SectionLabel>Returns</SectionLabel>
           <span className="inline-flex items-center rounded bg-[#e8f5ee] px-3 py-1 text-brand-alt text-[12px]"
@@ -137,56 +196,23 @@ function EndpointCard({ endpoint }) {
             {endpoint.returns}
           </span>
         </div>
-        <div>
-          <SectionLabel>HTTP Status Codes</SectionLabel>
-          <div className="flex flex-wrap gap-2">
+        <div className="agd-status-codes">
+          <h4 className="agd-status-title">HTTP Response Status Codes</h4>
+          <div className="agd-status-list">
             {endpoint.statusCodes.map((s) => (
-              <span key={s.code}
-                className={`inline-flex items-center gap-1.5 rounded px-2.5 py-1 text-[11px] ${s.ok ? "bg-[#e8f5ee] text-brand-alt" : "bg-[#fef2f2] text-red-500"}`}
-                style={{ fontFamily: "var(--font-stack-sans-headline)", fontWeight: 300 }}>
-                <span className="font-mono text-[11px]">{s.code}</span>
-                <span>{s.label}</span>
-              </span>
+              <div key={s.code} className={`agd-status-row ${s.ok ? "agd-status-ok" : "agd-status-err"}`}>
+                <span className="agd-status-code">{s.code}</span>
+                <span className="agd-status-label">{s.label}</span>
+              </div>
             ))}
           </div>
         </div>
       </div>
 
       {/* Examples */}
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-6">
         {endpoint.examples.map((ex, i) => (
-          <div key={i}>
-            <h4 className="mb-2 text-brand text-[13px] font-normal"
-              style={{ fontFamily: "var(--font-stack-sans-headline)", letterSpacing: "-0.2px" }}>
-              {ex.title}
-            </h4>
-            {ex.note && (
-              <p className="mb-3 text-muted text-[12px] italic"
-                style={{ fontFamily: "var(--font-stack-sans-headline)", fontWeight: 300, lineHeight: "18px" }}>
-                {ex.note}
-              </p>
-            )}
-            <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
-              <div>
-                <SectionLabel>Request — cURL</SectionLabel>
-                <div className="rounded-lg bg-brand-alt p-4 overflow-x-auto">
-                  <pre className="text-[#8AB89A] text-[11px] 991:text-[12px] whitespace-pre-wrap break-all"
-                    style={{ fontFamily: "var(--font-geist-mono), monospace", fontWeight: 400, lineHeight: "1.65" }}>
-                    {ex.curl}
-                  </pre>
-                </div>
-              </div>
-              <div>
-                <SectionLabel>Response</SectionLabel>
-                <div className="rounded-lg bg-brand-alt p-4 overflow-x-auto" style={{ maxHeight: "280px" }}>
-                  <pre className="text-[#8AB89A] text-[11px] 991:text-[12px] whitespace-pre-wrap"
-                    style={{ fontFamily: "var(--font-geist-mono), monospace", fontWeight: 400, lineHeight: "1.65" }}>
-                    {ex.response}
-                  </pre>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ExampleBlock key={i} ex={ex} />
         ))}
       </div>
       </div>

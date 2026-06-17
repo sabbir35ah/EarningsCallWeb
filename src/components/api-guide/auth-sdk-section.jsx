@@ -29,8 +29,8 @@ function DarkBlock({ label, code }) {
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           {label && (
-            <p className="mb-1.5 text-[10px] uppercase tracking-widest text-brand/40"
-              style={{ fontFamily: "var(--font-stack-sans-headline)", fontWeight: 300 }}>
+            <p className="mb-1.5 text-[10px] uppercase tracking-widest"
+              style={{ fontFamily: "var(--font-stack-sans-headline)", fontWeight: 500, color: "#48d881" }}>
               {label}
             </p>
           )}
@@ -66,7 +66,7 @@ export function AuthSdkSection() {
       {/* Authentication */}
       <section id="authentication" className="scroll-mt-36 mb-14">
         <SectionTitle>Authentication</SectionTitle>
-        <div className="rounded-xl border border-[#d7d7d7] bg-[#fafafa] p-6">
+        <div className="rounded-xl border border-[#d7d7d7] bg-white p-6">
           <p className="mb-6 text-muted text-[13px] 991:text-[14px]"
             style={{ fontFamily: "var(--font-stack-sans-headline)", fontWeight: 300, lineHeight: "22px" }}>
             All API requests require an API key passed as the <InlineCode>apikey</InlineCode> query
@@ -86,7 +86,7 @@ export function AuthSdkSection() {
       {/* SDKs */}
       <section id="sdks" className="scroll-mt-36 mb-14">
         <SectionTitle>SDKs</SectionTitle>
-        <div className="rounded-xl border border-[#d7d7d7] bg-[#fafafa] p-6">
+        <div className="rounded-xl border border-[#d7d7d7] bg-white p-6">
           <p className="mb-6 text-muted text-[13px] 991:text-[14px]"
             style={{ fontFamily: "var(--font-stack-sans-headline)", fontWeight: 300, lineHeight: "22px" }}>
             Official client libraries are available for quick integration:

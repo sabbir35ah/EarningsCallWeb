@@ -27,9 +27,10 @@ export function GuideSidebar() {
   return (
     <aside className="hidden lg:block">
       <div
-        className="sticky py-14 pr-8"
-        style={{ top: "var(--navbar-height)", maxHeight: "calc(100vh - var(--navbar-height))", overflowY: "auto" }}
+        className="sticky pr-4"
+        style={{ top: "var(--navbar-height)", maxHeight: "calc(100vh - var(--navbar-height))", overflowY: "auto", paddingBlock: "65px" }}
       >
+        <div className="rounded-xl border border-[#d7d7d7] bg-white p-6">
         <nav>
           {sidebarNav.map((group) => (
             <div key={group.group} className="mb-6">
@@ -71,6 +72,7 @@ export function GuideSidebar() {
             </div>
           ))}
         </nav>
+        </div>
       </div>
     </aside>
   );
