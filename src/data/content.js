@@ -33,10 +33,10 @@ export const testimonials = [
 // ─── FOOTER ──────────────────────────────────────────────────────────────────
 
 export const footerCompanyLinks = [
-  { label: "About Us", href: "#" },
-  { label: "Terms of Use", href: "#" },
-  { label: "Privacy Policy", href: "#" },
-  { label: "Contact", href: "#" },
+  { label: "About Us", href: "/about" },
+  { label: "Terms of Use", href: "/terms" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const footerQuickLinks = [
