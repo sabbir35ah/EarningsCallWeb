@@ -63,7 +63,7 @@ function EventCard({ company, quarter, year }) {
         }}
       >
         <div className="text-sm font-medium text-brand leading-snug">{company}</div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center justify-between">
           <span className="font-bold text-brand text-sm">{quarter}</span>
           <span className="text-sm" style={{ color: "#555" }}>{year}</span>
         </div>
@@ -83,7 +83,7 @@ function TimeGroup({ time, events }) {
           padding: "0.5rem 1rem",
         }}
       >
-        <span className="font-headline font-semibold text-brand text-base sm:text-lg">{time}</span>
+        <span className="font-headline font-medium text-brand text-base sm:text-lg">{time}</span>
         <span className="text-sm text-muted">
           {events.length} {events.length === 1 ? "Call" : "Calls"}
         </span>
