@@ -29,7 +29,9 @@ export function CalendarHero() {
             variants={fadeInUp}
             className="text-hero text-white text-center w-[min(820px,100%)]"
           >
-            Every earnings call, on one calendar.
+            Every earnings call,
+            <br />
+            on one calendar.
           </motion.h1>
           <motion.p
             variants={fadeInUp}
