@@ -41,7 +41,7 @@ export const footerCompanyLinks = [
 
 export const footerQuickLinks = [
   { label: "Pricing", href: "/pricing" },
-  { label: "Calendar", href: "#" },
+  { label: "Calendar", href: "/calendar" },
   { label: "Client Testimonials", href: "#" },
   { label: "S&P 500 Companies", href: "#" },
   { label: "Top Employers", href: "#" },
