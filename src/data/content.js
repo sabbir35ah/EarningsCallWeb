@@ -43,15 +43,15 @@ export const footerQuickLinks = [
   { label: "Pricing", href: "/pricing" },
   { label: "Calendar", href: "/calendar" },
   { label: "Client Testimonials", href: "#" },
-  { label: "S&P 500 Companies", href: "#" },
-  { label: "Top Employers", href: "#" },
-  { label: "Login", href: "#" },
+  { label: "S&P 500 Companies", href: "/sp-500" },
+  { label: "Top Employers", href: "/top-employers" },
+  { label: "Login", href: "/login" },
 ];
 
 export const footerResources = [
   { label: "API Resource", href: "/api-guide" },
   { label: "API Details", href: "/api-details" },
-  { label: "Blog", href: "#" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export const footerSocials = [
